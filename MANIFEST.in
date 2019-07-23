@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include listing_manager *.css
+recursive-include listing_manager *.csv
+recursive-include listing_manager *.html
+recursive-include listing_manager *.ico
+recursive-include listing_manager *.js
+recursive-include listing_manager *.json
+recursive-include listing_manager *.md
+recursive-include listing_manager *.png
+recursive-include listing_manager *.py
+recursive-include listing_manager *.svg
+recursive-include listing_manager *.txt
+recursive-exclude listing_manager *.pyc
