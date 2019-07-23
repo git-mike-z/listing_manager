@@ -6,8 +6,8 @@ def get_data():
 	return [
 		{
 			"module_name": "Listing Manager",
-			"color": "grey",
-			"icon": "octicon octicon-file-directory",
+			"color": "red",
+			"icon": "octicon "cloud-upload",
 			"type": "module",
 			"label": _("Listing Manager")
 		}
