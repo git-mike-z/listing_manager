@@ -7,7 +7,7 @@ def get_data():
 		{
 			"module_name": "Listing Manager",
 			"color": "red",
-			"icon": "octicon "cloud-upload",
+			"icon": "noun_marketplace_2555099.svg",
 			"type": "module",
 			"label": _("Listing Manager")
 		}
