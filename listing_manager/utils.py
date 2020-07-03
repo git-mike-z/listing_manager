@@ -4,7 +4,6 @@ import frappe, erpnext
 from frappe import _
 import json
 from frappe.utils import flt, cstr, nowdate, nowtime
-
 from six import string_types
 
 class InvalidWarehouseCompany(frappe.ValidationError): pass
