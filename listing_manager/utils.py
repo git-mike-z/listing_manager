@@ -10,7 +10,7 @@ from six import string_types
 class InvalidWarehouseCompany(frappe.ValidationError): pass
 
 @frappe.whitelist()
-def get_item_code(scancode)
+def get_item_code(scancode=None)
 	#try barcode lookup
 	item_code = frappe.db.get_value("Item Barcode", {"scancode": barcode}, fieldname=["parent"])
 	if not item_code:
