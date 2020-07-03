@@ -21,3 +21,7 @@ def get_item_code(barcode=None, serial_no=None):
 			frappe.throw(_("No Item with Serial No {0}").format(serial_no))
 
 	return item_code
+
+@frappe.whitelist()
+def hello():
+	return "Hello Mike"
