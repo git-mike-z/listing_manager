@@ -15,9 +15,12 @@ def get_item_code(barcode=None, serial_no=None):
 		item_code = frappe.db.get_value("Item Barcode", {"barcode": barcode}, fieldname=["parent"])
 		if not item_code:
 			frappe.throw(_("No Item with Barcode {0}").format(barcode))
-	elif serial_no:
-		item_code = frappe.db.get_value("Serial No", serial_no, "item_code")
-		if not item_code:
-			frappe.throw(_("No Item with Serial No {0}").format(serial_no))
+	return item_code
 
+@frappe.whitelist()
+def get_item_code2(code=None):
+	if code:
+		item_code = frappe.db.get_value("Item Supplier", {"supplier_part_no": code}, fieldname=["parent"])
+		if not item_code:
+			frappe.throw(_("No Item with Supplier Part No {0}").format(code))
 	return item_code
