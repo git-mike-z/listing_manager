@@ -16,7 +16,7 @@ def get_item_code(code=None):
 		if not item_code:
 			item_code = frappe.db.get_value("Item Supplier", {"supplier_part_no": code}, fieldname=["parent"])
 			if not item_code:
-			frappe.throw(_("No Item with code {0}").format(code))
+			item_code = "Not Found!"
 	return item_code
 
 
