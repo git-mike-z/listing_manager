@@ -11,6 +11,7 @@ class InvalidWarehouseCompany(frappe.ValidationError): pass
 
 @frappe.whitelist()
 def get_item_code(scancode=None)
+	global item_code
 	#try barcode lookup
 	item_code = frappe.db.get_value("Item Barcode", {"scancode": barcode}, fieldname=["parent"])
 	if not item_code:
