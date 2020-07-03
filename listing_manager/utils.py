@@ -10,15 +10,15 @@ from six import string_types
 class InvalidWarehouseCompany(frappe.ValidationError): pass
 
 @frappe.whitelist()
-def get_item_code(barcode=None, serial_no=None):
-	if barcode:
-		item_code = frappe.db.get_value("Item Barcode", {"barcode": barcode}, fieldname=["parent"])
+def get_item_code(scancode=None):
+	if scancode:
+		#try barcode lookup
+		item_code = frappe.db.get_value("Item Barcode", {"scancode": barcode}, fieldname=["parent"])
 		if not item_code:
-			frappe.throw(_("No Item with Barcode {0}").format(barcode))
-	elif serial_no:
-		item_code = frappe.db.get_value("Serial No", serial_no, "item_code")
+			#try supplier code lookup
+			item_code = frappe.db.get_value("Item Supplier", {"scancode": supplier_part_no}, fieldname=["parent"]) 
 		if not item_code:
-			frappe.throw(_("No Item with Serial No {0}").format(serial_no))
+			frappe.throw(_("No Item Found").format(scancode))
 
 	return item_code
 
