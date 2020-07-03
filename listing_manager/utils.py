@@ -18,4 +18,6 @@ def get_item_code(code=None):
 			item_code = "Not Found!"
 	return item_code
 
-
+@frappe.whitelist()
+def hello():
+return "Hello"
